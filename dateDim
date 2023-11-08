@@ -1,0 +1,17 @@
+Date = 
+VAR MinYear = YEAR ( MIN ( 'Blink downloads'[Invoice Date] ) ) // replace with fact table reference or hardcode
+VAR MaxYear = YEAR ( MAX ( 'Blink downloads'[Invoice Date] ) ) // replace with fact table reference or hardcode
+RETURN
+ADDCOLUMNS (
+    FILTER (
+        CALENDARAUTO( ),
+        AND ( YEAR ( [Date] ) >= MinYear, YEAR ( [Date] ) <= MaxYear )
+    ),
+    "Calendar Year", YEAR ( [Date] ),
+    "Month Name", FORMAT ( [Date], "mmmm" ),
+    "Month Number", MONTH ( [Date] )
+)
+
+
+
+
