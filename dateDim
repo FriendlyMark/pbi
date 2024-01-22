@@ -1,6 +1,6 @@
 Date = 
-VAR MinYear = YEAR ( MIN ( 'Blink downloads'[Invoice Date] ) ) // replace with fact table reference or hardcode
-VAR MaxYear = YEAR ( MAX ( 'Blink downloads'[Invoice Date] ) ) // replace with fact table reference or hardcode
+VAR MinYear = YEAR ( MIN ( --[Invoice Date] ) ) // replace with fact table reference or hardcode
+VAR MaxYear = YEAR ( MAX ( --[Invoice Date] ) ) // replace with fact table reference or hardcode
 RETURN
 ADDCOLUMNS (
     FILTER (
